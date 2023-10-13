@@ -363,4 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Migration file
-**/AuthorizeLibrary/AuthorizeLibrary-master/Data/Migrations/*.cs
+AuthorizeLibrary/AuthorizeLibrary-master/Data/Migrations/
+.projectFile/

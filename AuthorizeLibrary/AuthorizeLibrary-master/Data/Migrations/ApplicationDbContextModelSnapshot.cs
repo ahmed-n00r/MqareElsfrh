@@ -109,7 +109,7 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Groups", (string)null);
                 });
 
             modelBuilder.Entity("DBModels.AppModels.StudentDuty", b =>
@@ -141,7 +141,7 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("StudentDuties");
+                    b.ToTable("StudentDuties", (string)null);
                 });
 
             modelBuilder.Entity("DBModels.AppModels.StudentTask", b =>
@@ -179,7 +179,7 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasIndex("TaskId");
 
-                    b.ToTable("StudentTasks");
+                    b.ToTable("StudentTasks", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
