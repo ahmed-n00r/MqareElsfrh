@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-MqareElsfrh.web-0e7bb087-0436-433d-88fa-9f5a769447fd</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Resources\ar-EG.json" />
+    <Content Remove="wwwroot\Resources\de-DE.json" />
+    <Content Remove="wwwroot\Resources\en-US.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Resources\ar-EG.json" />
+    <None Include="wwwroot\Resources\de-DE.json" />
+    <None Include="wwwroot\Resources\en-US.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AuthorizeLibrary\AuthorizeLibrary-master\AuthorizeLibrary.csproj" />
+    <ProjectReference Include="..\jsonCultuerLocalizerLibrary\jsonCultuerLocalizerLibrary-master\jsonCultuerLocalizerLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
