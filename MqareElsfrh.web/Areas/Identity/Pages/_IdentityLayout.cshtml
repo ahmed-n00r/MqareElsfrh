@@ -21,20 +21,31 @@
     <link id="pagestyle" href="~/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" asp-append-version="true"  />
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
-    <div class="min-height-300 bg-primary position-absolute w-100"></div>
-    <partial name="partialViews/_aside" />
+<body>
+    <partial name="partialViews/_IdentityNavbar" />
     
-    <main role="main" class="main-content position-relative border-radius-lg ">
-        <partial name="partialViews/_navbar" />
+    <main role="main" class="main-content  mt-0">
+        
         @RenderBody()
     </main>
 
-    <partial name="partialViews/_pageSetting" />
+    @*<partial name="partialViews/_pageSetting" />*@
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer py-5">
         <div class="container">
-            &copy; 2023 - MqareElsfrh.web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
+                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-facebook"></span>
+                    </a>
+                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-twitter"></span>
+                    </a>
+                    <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <span class="text-lg fab fa-instagram"></span>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>

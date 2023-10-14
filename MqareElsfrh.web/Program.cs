@@ -39,7 +39,7 @@ builder.Services.AddMvc()
         option.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(jsonStringLocalizerFactory));
     });
 
-var supportedLanguage = new[] { "en-US", "ar-EG", "de-DE" }; //this array of language
+var supportedLanguage = new[] { "en-US", "ar-EG" }; //this array of language
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {

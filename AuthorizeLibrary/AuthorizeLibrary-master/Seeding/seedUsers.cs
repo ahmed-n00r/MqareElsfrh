@@ -16,7 +16,7 @@ namespace AuthorizeLibrary.Seeding
             AppUser user,
             List<string> role)
         {
-            var x =await userManager.FindByEmailAsync(user.Email);
+            var x = await userManager.FindByEmailAsync(user.Email);
             if (userManager.FindByEmailAsync(user.Email).Result == null)
             {
                 await userManager.CreateAsync(user,user.PasswordHash ?? AppConstants.defoletPassword);
@@ -28,6 +28,8 @@ namespace AuthorizeLibrary.Seeding
 
 
         }
+
+        public static async Task<AppUser> getUserByEmail(string email, UserManager<AppUser> userManager) => await userManager.FindByEmailAsync(email);
 
     }
 }
