@@ -10,6 +10,11 @@ namespace AuthorizeLibrary.Data
     public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
 
+        public ApplicationDbContext()
+        {
+
+        }
+
         public static string DBConnctionString { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
