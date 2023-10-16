@@ -10,8 +10,11 @@
 @using Microsoft.AspNetCore.Localization;
 @using Microsoft.AspNetCore.Http.Features;
 @using Microsoft.Extensions.Options;
+@using System.Globalization
 
 @inject IOptions<RequestLocalizationOptions> options
 @inject IViewLocalizer localizer
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+

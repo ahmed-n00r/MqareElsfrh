@@ -1,5 +1,9 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    var isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+}
+
+<!DOCTYPE html>
+<html lang="@(isRTL ? "ar" : "en")" dir="@(isRTL ? "rtl" : "ltr")">
 
 <head>
     <meta charset="utf-8" />
@@ -21,10 +25,10 @@
     <link id="pagestyle" href="~/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" asp-append-version="true"  />
 </head>
 
-<body>
+<body class="@(isRTL ? "rtl" : "")">
     <partial name="partialViews/_IdentityNavbar" />
     
-    <main role="main" class="main-content  mt-0">
+    <main role="main" class="main-content @(isRTL ? "overflow-hidden" : "") mt-0">
         
         @RenderBody()
     </main>

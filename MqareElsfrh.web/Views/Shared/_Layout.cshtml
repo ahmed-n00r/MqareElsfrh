@@ -1,11 +1,16 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@{
+    var isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+    var colorCode = Context.Request.Cookies["colorCode"];
+}
+<!DOCTYPE html>
+<html lang="@(isRTL ? "ar" : "en")" dir="@(isRTL ? "rtl" : "ltr")">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="~/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="~/assets/img/favicon.png">
     <title>
         Argon Dashboard 2 by Creative Tim
     </title>
@@ -21,11 +26,11 @@
     <link id="pagestyle" href="~/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" asp-append-version="true"  />
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
-    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+<body class="g-sidenav-show @(isRTL ? "rtl" : "") bg-gray-100">
+    <div id="divColor" class="min-height-300 bg-primary position-absolute w-100" style=" background-color: @colorCode !important"></div>
     <partial name="partialViews/_aside" />
-    
-    <main role="main" class="main-content position-relative border-radius-lg ">
+
+    <main role="main" class="main-content position-relative border-radius-lg @(isRTL ? "overflow-hidden" : "")">
         <partial name="partialViews/_navbar" />
         @RenderBody()
     </main>

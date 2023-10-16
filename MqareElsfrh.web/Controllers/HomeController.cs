@@ -26,7 +26,7 @@ namespace MqareElsfrh.web.Controllers
             return View();
         }
 
-        [HttpPost]
+        [AllowAnonymous]
         public IActionResult SetLanguage(string culture, string returnUrl)
         {
             Response.Cookies.Append(

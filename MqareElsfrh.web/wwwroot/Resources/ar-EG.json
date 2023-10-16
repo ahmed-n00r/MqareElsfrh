@@ -3,5 +3,18 @@
   "FarstName": "الاسم الاول",
   "LastName": "الاسم الخير",
   "Password": "كلمة المرور",
-  "ConfirmPassword": "تأكيد كلمة المرور"
+  "ConfirmPassword": "تأكيد كلمة المرور",
+  "SignIn": "تسجيل الدخول",
+  "SignUp": "تسجيل حساب جديد",
+  "Logout": "مغادر",
+  "Dashboard": "الشاشه الاحصائيه",
+  "RememberMe": "تزكرني",
+  "LogInMasseg1": "الرجاء قم بادخال {0} و {1} الخص بك لتتم عملية {2}",
+  "LogInMasseg2": "ليس لديك حساب ؟",
+  "Agree": "أنا اوافق علي",
+  "Conditions": "الأحكام و الشروط",
+  "ApplictionName": "مقارء السفره",
+  "HaveAccount": "هل لديك حساب؟",
+  "RegisterWith": "سجل عن طريق",
+  "Or": "او"
 }

@@ -3,5 +3,18 @@
   "FarstName": "Farst Name",
   "LastName": "Last Name",
   "Password": "Password",
-  "ConfirmPassword": "Confirm Password"
+  "ConfirmPassword": "Confirm Password",
+  "SignIn": "Sign In",
+  "SignUp": "Sign Up",
+  "Logout": "Logout",
+  "Dashboard": "Dashboard",
+  "RememberMe": "Remember me",
+  "LogInMasseg1": "Enter your {0} and {1} to {2}",
+  "LogInMasseg2": "Don't have an account?",
+  "Agree": "I agree the",
+  "Conditions": "Terms and Conditions",
+  "ApplictionName": "Mqare Elsfrh",
+  "HaveAccount": "Already have an account?",
+  "RegisterWith": "Register with",
+  "Or": "Or"
 }

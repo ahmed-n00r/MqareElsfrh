@@ -1,5 +1,9 @@
-﻿@*@inject SignInManager<AppUser> SignInManager
-@inject UserManager<AppUser> UserManager*@
+﻿@{
+    var isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+    var en = options.Value.SupportedCultures?.FirstOrDefault();
+    var ar = options.Value.SupportedCultures?.LastOrDefault();
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path.Value}";
+}
 
 <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
@@ -8,7 +12,7 @@
             <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
                 <div class="container-fluid">
                     <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " asp-controller="Home" asp-action="index">
-                        Argon Dashboard 2
+                        @localizer["ApplictionName"]
                     </a>
                     <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon mt-2">
@@ -19,25 +23,24 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navigation">
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" asp-controller="Home" asp-action="index">
-                                    <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i> Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link me-2" href="../pages/profile.html">
-                                    <i class="fa fa-user opacity-6 text-dark me-1"></i> Profile
-                                </a>
-                            </li>
+                           
                             <li class="nav-item">
                                 <a class="nav-link me-2" asp-area="Identity" asp-page="/Account/Register">
-                                    <i class="fas fa-user-circle opacity-6 text-dark me-1"></i> Sign Up
+                                    <i class="fas fa-user-circle opacity-6 text-dark me-1"></i> @localizer["SignUp"]
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link me-2" asp-area="Identity" asp-page="/Account/Login">
-                                    <i class="fas fa-key opacity-6 text-dark me-1"></i> Sign In
+                                    <i class="fas fa-key opacity-6 text-dark me-1"></i> @localizer["SignIn"]
                                 </a>
+                            </li>
+                        </ul>
+
+                        <ul class="navbar-nav d-lg-block d-none">
+                            <li class="nav-item">
+                                <a class="btn btn-sm mb-0 me-1 btn-primary"asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl"
+                                   asp-route-culture="@(isRTL ? en.Name : ar.Name)"> @(isRTL ? en.NativeName : ar.NativeName)
+                               </a>
                             </li>
                         </ul>
                         
