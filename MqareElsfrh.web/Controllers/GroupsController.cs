@@ -22,8 +22,13 @@ namespace MqareElsfrh.web.Controllers
         // GET: Groups
         public async Task<IActionResult> Index()
         {
+            int? x = _context.Users.Count();
               return _context.Groups != null ? 
-                          View(await _context.Groups.ToListAsync()) :
+                          View(await _context.Groups.Select(
+                              e => new Group(){ 
+                                  Id= e.Id,
+                                  Name = e.Name,
+                                  StudentNumber = _context.Users.Where(u => u.GroupId == e.Id).Count() }).ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Groups'  is null.");
         }
 
@@ -41,7 +46,7 @@ namespace MqareElsfrh.web.Controllers
             {
                 return NotFound();
             }
-
+            @group.StudentNumber = _context.Users.Where(u => u.GroupId == @group.Id).Count();
             return View(@group);
         }
 
@@ -80,6 +85,7 @@ namespace MqareElsfrh.web.Controllers
             {
                 return NotFound();
             }
+            
             return View(@group);
         }
 
@@ -132,7 +138,7 @@ namespace MqareElsfrh.web.Controllers
             {
                 return NotFound();
             }
-
+            @group.StudentNumber = _context.Users.Where(u => u.GroupId == @group.Id).Count();
             return View(@group);
         }
 

@@ -17,7 +17,7 @@ namespace AuthorizeLibrary.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "7.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -44,6 +44,9 @@ namespace AuthorizeLibrary.Data.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("GroupId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -84,6 +87,8 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("GroupId");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -109,7 +114,7 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Groups", (string)null);
+                    b.ToTable("Groups");
                 });
 
             modelBuilder.Entity("DBModels.AppModels.StudentDuty", b =>
@@ -141,7 +146,7 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("StudentDuties", (string)null);
+                    b.ToTable("StudentDuties");
                 });
 
             modelBuilder.Entity("DBModels.AppModels.StudentTask", b =>
@@ -179,7 +184,7 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasIndex("TaskId");
 
-                    b.ToTable("StudentTasks", (string)null);
+                    b.ToTable("StudentTasks");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -317,6 +322,15 @@ namespace AuthorizeLibrary.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("UserToken", (string)null);
+                });
+
+            modelBuilder.Entity("AuthorizeLibrary.IdentityModel.AppUser", b =>
+                {
+                    b.HasOne("DBModels.AppModels.Group", null)
+                        .WithMany()
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DBModels.AppModels.StudentDuty", b =>

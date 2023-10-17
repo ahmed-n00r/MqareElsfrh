@@ -22,6 +22,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MqareElsfrh.web.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<AppUser> _signInManager;

@@ -14,9 +14,9 @@ namespace AuthorizeLibrary.IdentityModel
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        //public long GroupId { get; set; }
-        //[ForeignKey("GrouId")]
-        //public Group Group { get; set; }
+        public long? GroupId { get; set; }
+        //[ForeignKey("GroupId")]
+        //public Group? StudentGroup { get; set; }
 
         [NotMapped]
         public string FullName { get => $"{FirstName} {LastName}"; }

@@ -42,6 +42,11 @@ namespace AuthorizeLibrary.Data
                 .WithMany()
                 .HasForeignKey(c => c.RoleId);
 
+            builder.Entity<AppUser>()
+                .HasOne<Group>()
+                .WithMany()
+                .HasForeignKey(c => c.GroupId);
+
             builder.Entity<StudentDuty>()
                 .HasOne<AppUser>()
                 .WithMany()

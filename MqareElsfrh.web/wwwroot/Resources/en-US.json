@@ -16,5 +16,22 @@
   "ApplictionName": "Mqare Elsfrh",
   "HaveAccount": "Already have an account?",
   "RegisterWith": "Register with",
-  "Or": "Or"
+  "Or": "Or",
+  "Groups": "Groups",
+  "Tables": "Tables",
+  "Pages": "Pages",
+  "View": "View",
+  "Create": "Create",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "Details": "Details",
+  "Student": "Student",
+  "StudentNum": "Student number:{0}",
+  "GroupInformation": "Group Information",
+  "Name": "Name",
+  "Group": "Group",
+  "Save": "Save",
+  "CreateNew": "Create new {0}",
+  "NameWith": "{0} name"
+
 }

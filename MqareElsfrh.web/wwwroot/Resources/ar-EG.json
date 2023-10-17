@@ -16,5 +16,21 @@
   "ApplictionName": "مقارء السفره",
   "HaveAccount": "هل لديك حساب؟",
   "RegisterWith": "سجل عن طريق",
-  "Or": "او"
+  "Or": "او",
+  "Groups": "المجموعاة",
+  "Tables": "الجدول",
+  "Pages": "الصفحه",
+  "View": "عرض",
+  "Create": "انشاء",
+  "Edit": "تعديل",
+  "Delete": "حزف",
+  "Details": "التفاصيل",
+  "Student": "الطلاب",
+  "StudentNum": "عدد الطلاب:{0}",
+  "GroupInformation": "بياناة المجموعاة",
+  "Name": "الاسم",
+  "NameWith": "اسم {0}",
+  "Group": "المجموعه",
+  "Save": "حفظ",
+  "CreateNew": "اشاء {0} جديد"
 }
