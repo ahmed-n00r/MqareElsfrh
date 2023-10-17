@@ -1,5 +1,6 @@
-﻿using AuthorizeLibrary.IdentityModel;
+﻿//using AuthorizeLibrary.IdentityModel;
 using DBModels.AppModels;
+using DBModels.IdentityModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +45,7 @@ namespace AuthorizeLibrary.Data
 
             builder.Entity<AppUser>()
                 .HasOne<Group>()
-                .WithMany()
+                .WithMany(s => s.Students)
                 .HasForeignKey(c => c.GroupId);
 
             builder.Entity<StudentDuty>()

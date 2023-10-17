@@ -1,6 +1,6 @@
 using AuthorizeLibrary.Constants;
 using AuthorizeLibrary.Data;
-using AuthorizeLibrary.IdentityModel;
+using DBModels.IdentityModel;
 using AuthorizeLibrary.Seeding;
 using jsonCultuerLocalizerLibrary;
 using Microsoft.AspNetCore.Identity;

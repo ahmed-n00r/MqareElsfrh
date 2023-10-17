@@ -1,5 +1,5 @@
 ﻿using AuthorizeLibrary.Constants;
-using AuthorizeLibrary.IdentityModel;
+using DBModels.IdentityModel;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
