@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AuthorizeLibrary.Constants;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using MqareElsfrh.web.Models;
@@ -14,6 +15,7 @@ namespace MqareElsfrh.web.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            ModelConstants.setAllNotActive(ModelConstants.HomeModel);
         }
 
         public IActionResult Index()
