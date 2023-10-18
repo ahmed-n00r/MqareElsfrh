@@ -33,5 +33,11 @@
   "Group": "المجموعه",
   "Save": "حفظ",
   "CreateNew": "اشاء {0} جديد",
-  "StudentTask": "مهام الطلاب"
+
+  "StudentTask": "مهام الطلاب",
+  "TaskStatus": "حالة المهمه",
+  "TaskType": "نوع المهمه",
+  "EndDate": "تارخ الانجاز",
+  "RoleName": "صلاحية اغلاق المهمه",
+  "TaskId": "تابع للمه"
 }

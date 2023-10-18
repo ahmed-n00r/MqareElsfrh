@@ -49,6 +49,7 @@ namespace MqareElsfrh.web.Controllers
         public IActionResult Create()
         {
             ViewData["TaskId"] = new SelectList(_context.StudentTasks, "Id", "Name");
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name");
             return View();
         }
 

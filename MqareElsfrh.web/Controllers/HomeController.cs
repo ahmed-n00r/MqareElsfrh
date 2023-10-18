@@ -15,7 +15,7 @@ namespace MqareElsfrh.web.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            ModelConstants.setAllNotActive(ModelConstants.HomeModel);
+            
         }
 
         public IActionResult Index()

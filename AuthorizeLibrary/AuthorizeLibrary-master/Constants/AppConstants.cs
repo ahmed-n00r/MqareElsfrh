@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -11,6 +13,9 @@ namespace AuthorizeLibrary.Constants
     {
         //user constants
         public const string defoletPassword = "Pa$$word*123";
+
+        public static bool isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+        public static string colorName = "primary";
 
     }
 }

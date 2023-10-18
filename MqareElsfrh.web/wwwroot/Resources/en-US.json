@@ -33,6 +33,12 @@
   "Save": "Save",
   "CreateNew": "Create new {0}",
   "NameWith": "{0} name",
-  "StudentTask": "Student Task"
+
+  "StudentTask": "Student sask",
+  "TaskStatus": "Task status",
+  "TaskType": "Task type",
+  "EndDate": "End date",
+  "RoleName": "Role Name",
+  "TaskId": "Barent task"
 
 }

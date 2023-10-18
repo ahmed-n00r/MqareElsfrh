@@ -28,11 +28,11 @@ namespace AuthorizeLibrary.Constants
                 //StudentModel
             }.OrderBy(k => k.Index).ToList();
 
-        public static void setAllNotActive(ModelData model)
+        public static void setAllNotActive(string controllerName)
         {
             foreach(var item in ModelList)
             {
-                item.IsActive = item.Name.Equals(model.Name, StringComparison.OrdinalIgnoreCase)
+                item.IsActive = item.Name.Equals(controllerName, StringComparison.OrdinalIgnoreCase)
                     ?  ModelActivationStatus.Active
                     : ModelActivationStatus.NotActive;
             }

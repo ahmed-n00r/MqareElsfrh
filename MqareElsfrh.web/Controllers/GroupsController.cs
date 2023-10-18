@@ -18,7 +18,6 @@ namespace MqareElsfrh.web.Controllers
         public GroupsController(ApplicationDbContext context)
         {
             _context = context;
-            ModelConstants.setAllNotActive(ModelConstants.GroupModel);
             
         }
 

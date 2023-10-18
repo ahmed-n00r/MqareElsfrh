@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Localization;
 using System.Globalization;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Azure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -103,5 +105,22 @@ await seedUsers.seedAsync(userManger
     },
     RoleConstants.rolesList()
     );
+
+app.Use(async (context, next) =>
+{
+
+    var controllerActionDescriptor = context?
+        .GetEndpoint()?
+        .Metadata
+        .GetMetadata<ControllerActionDescriptor>();
+
+    var controllerName = controllerActionDescriptor?.ControllerName;
+    //var actionName = controllerActionDescriptor?.ActionName;
+    ModelConstants.setAllNotActive(controllerName ?? "");
+    await next.Invoke();
+
+    AppConstants.colorName = context.Request.Cookies["dataColor"] ?? "primary";
+
+});
 
 app.Run();
