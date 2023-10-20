@@ -16,6 +16,10 @@ namespace AuthorizeLibrary.Constants
 
         public static bool isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
         public static string colorName = "primary";
+        public static string buttonClass { get => $"{colorName} colorClass"; }
+
+        public static string controller = "Home";
+        public static string action = "Index";
 
     }
 }

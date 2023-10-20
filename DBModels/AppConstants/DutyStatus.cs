@@ -8,7 +8,8 @@ namespace DBModels.AppConstants
 {
     public enum DutyStatus
     {
+        _ ,
         Done = 1,
-        Not_yet = 0,
+        Not_yet = 2,
     }
 }

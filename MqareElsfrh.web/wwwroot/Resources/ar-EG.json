@@ -34,10 +34,18 @@
   "Save": "حفظ",
   "CreateNew": "اشاء {0} جديد",
 
-  "StudentTask": "مهام الطلاب",
+  "StudentTasks": "مهام الطلاب",
   "TaskStatus": "حالة المهمه",
   "TaskType": "نوع المهمه",
   "EndDate": "تارخ الانجاز",
   "RoleName": "صلاحية اغلاق المهمه",
-  "TaskId": "تابع للمه"
+  "TaskId": "تابع للمه",
+  "Task": "مهمه",
+
+  "StudentDuties": "مهام الطلبه",
+  "Done": "تم",
+  "Not_yet": "ليس بعد",
+
+  "DutyStatus": "الحاله",
+  "Index": "شاشة عرض البينات"
 }

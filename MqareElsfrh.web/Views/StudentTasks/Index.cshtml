@@ -11,8 +11,7 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <a asp-action="Create" class="btn btn-@AppConstants.colorName btn-sm ms-auto">@localizer["Create"]</a>
-
+                    <a asp-action="Create" class="btn btn-@AppConstants.buttonClass btn-sm ms-auto">@localizer["Create"]</a>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
@@ -41,18 +40,13 @@
                                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                                         <td>@Html.DisplayFor(modelItem => item.TaskStatus)</td>
                                         <td>@Html.DisplayFor(modelItem => item.TaskType)</td>
-                                        <td class="text-right">@Html.DisplayFor(modelItem => item.EndDate)</td>
+                                        <td class="text-right">@Html.DisplayFor(modelItem => item.shortEndDate)</td>
                                         <td class="text-right">@Html.DisplayFor(modelItem => item.parentTask.Name)</td>
                                         <td class="td-actions text-right">
-                                            <a asp-action="Edit" asp-route-id="@item.Id" type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
-                                                <i class="ni ni-single-02"></i>
-                                            </a>
-                                            <a asp-action="Details" asp-route-id="@item.Id type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                                                <i class="ni ni-settings-gear-65"></i>
-                                            </a>
-                                            <a asp-action="Delete" asp-route-id="@item.Id" type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                                                <i class="ni ni-fat-remove"></i>
-                                            </a>
+                                            <a class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user" asp-action="Edit" asp-route-id="@item.Id">@localizer["Edit"]</a> |
+                                            <a class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Details user" asp-action="Details" asp-route-id="@item.Id">@localizer["Details"]</a> |
+                                            <a class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete user" asp-action="Delete" asp-route-id="@item.Id">@localizer["Delete"]</a>
+
                                         </td>
                                     </tr>
                                 }

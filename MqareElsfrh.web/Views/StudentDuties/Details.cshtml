@@ -5,33 +5,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-profile">
+                <img src="~/assets/img/1.jpg" alt="Image placeholder" class="card-img-top">
+                <div class="row justify-content-center">
+                    <div class="col-4 col-lg-4 order-lg-2">
+                        <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
+                            <a href="javascript:;">
+                                <img src="~/assets/img/g2.png" class="rounded-circle img-fluid border border-2 border-white">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-sm btn-@AppConstants.buttonClass mb-0 d-none d-lg-block">@localizer["Edit"]</a>
+                        <a href="javascript:;" class="btn btn-sm btn-danger mb-0 d-block d-lg-none"><i class="ni ni-collection"></i></a>
+                        <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-sm btn-danger float-right mb-0 d-none d-lg-block">@localizer["Delete"]</a>
+                        <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-block d-lg-none"><i class="ni ni-email-83"></i></a>
+                    </div>
+                </div>
+                <div class="card-body pt-0">
+                    <div class="text-center mt-4">
+                        <h5>
+                            @Html.DisplayNameFor(model => model.DutyStatus)<span class="font-weight-light">: @localizer[Model.DutyStatus.ToString()]</span>
+                        </h5>
+                        <h5>
+                            @Html.DisplayNameFor(model => model.task)<span class="font-weight-light">: @Html.DisplayFor(model => model.task.Name)</span>
+                        </h5>
+                        <h5>
+                            @Html.DisplayNameFor(model => model.group)<span class="font-weight-light">: @Html.DisplayFor(model => model.group.Name)</span>
+                        </h5>
 
-<div>
-    <h4>StudentDuty</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DutyStatus)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DutyStatus)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.task)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.task.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.group)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.group.Name)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -115,11 +115,14 @@ app.Use(async (context, next) =>
         .GetMetadata<ControllerActionDescriptor>();
 
     var controllerName = controllerActionDescriptor?.ControllerName;
-    //var actionName = controllerActionDescriptor?.ActionName;
-    ModelConstants.setAllNotActive(controllerName ?? "");
-    await next.Invoke();
+    var actionName = controllerActionDescriptor?.ActionName;
 
+    ModelConstants.setAllNotActive(controllerName ?? "");
     AppConstants.colorName = context.Request.Cookies["dataColor"] ?? "primary";
+    AppConstants.isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+    AppConstants.controller = controllerName;
+    AppConstants.action = actionName;
+    await next.Invoke();
 
 });
 

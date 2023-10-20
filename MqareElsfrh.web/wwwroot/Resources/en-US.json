@@ -34,11 +34,19 @@
   "CreateNew": "Create new {0}",
   "NameWith": "{0} name",
 
-  "StudentTask": "Student sask",
+  "StudentTasks": "Student sask",
   "TaskStatus": "Task status",
   "TaskType": "Task type",
   "EndDate": "End date",
   "RoleName": "Role Name",
-  "TaskId": "Barent task"
+  "TaskId": "Barent task",
+  "Task": "Task",
+
+  "StudentDuties": "Student duties",
+  "Done": "Done",
+  "Not_yet": "Not yet",
+
+  "DutyStatus": "Duty Status",
+  "Index": "Index"
 
 }

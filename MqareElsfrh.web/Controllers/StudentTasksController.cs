@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AuthorizeLibrary.Data;
 using DBModels.AppModels;
+using DBModels.AppConstants;
 
 namespace MqareElsfrh.web.Controllers
 {
@@ -83,6 +84,13 @@ namespace MqareElsfrh.web.Controllers
             {
                 return NotFound();
             }
+            var statusList = Enum.GetValues(typeof(TaskStatusEnum))
+                .Cast<TaskStatusEnum>()
+                .Select(e => new SelectListItem() { Text = e.ToString(), Value = ((int)e).ToString() })
+                .ToList()
+                .OrderBy(e => e.Text);
+            ViewData["TaskStatus"] = new SelectList(statusList, "Value", "Text", studentTask.TaskStatus);
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", studentTask.Id);
             ViewData["TaskId"] = new SelectList(_context.StudentTasks, "Id", "Name", studentTask.TaskId);
             return View(studentTask);
         }
@@ -119,6 +127,13 @@ namespace MqareElsfrh.web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            var statusList = Enum.GetValues(typeof(TaskStatusEnum))
+                .Cast<TaskStatusEnum>()
+                .Select(e => new SelectListItem() { Text = e.ToString(), Value = ((int)e).ToString() })
+                .ToList()
+                .OrderBy(e => e.Text);
+            ViewData["TaskStatus"] = new SelectList(statusList, "Value", "Text", studentTask.TaskStatus);
+            ViewData["RoleId"] = new SelectList(_context.Roles, "Id", "Name", studentTask.Id);
             ViewData["TaskId"] = new SelectList(_context.StudentTasks, "Id", "Name", studentTask.TaskId);
             return View(studentTask);
         }

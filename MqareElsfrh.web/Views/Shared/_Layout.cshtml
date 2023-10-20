@@ -42,8 +42,8 @@
             &copy; 2023 - MqareElsfrh.web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>*@
 
     <!--   Core JS Files   -->
@@ -56,6 +56,15 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="~/assets/js/argon-dashboard.min.js?v=2.0.4" asp-append-version="true"></script>
+    <script>
+        $(".badge").click(function () {
+            $(".colorClass").removeClass(function (index, css) {
+                return (css.match(/(^|\s)btn-\S+/g) || []).join(' ');
+            });
+            $(".colorClass").addClass("btn-" + $(this).attr("data-color") + " btn-sm");
+        });
+        
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

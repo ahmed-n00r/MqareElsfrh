@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AuthorizeLibrary.Data;
 using DBModels.AppModels;
+using DBModels.AppConstants;
+using Microsoft.AspNetCore.Mvc.Localization;
+using Microsoft.Extensions.Localization;
 
 namespace MqareElsfrh.web.Controllers
 {
     public class StudentDutiesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IStringLocalizer<StudentDutiesController> localizer;
 
-        public StudentDutiesController(ApplicationDbContext context)
+        public StudentDutiesController(ApplicationDbContext context, IStringLocalizer<StudentDutiesController> localizer)
         {
             _context = context;
+            this.localizer = localizer;
         }
 
         // GET: StudentDuties
@@ -49,6 +54,12 @@ namespace MqareElsfrh.web.Controllers
         // GET: StudentDuties/Create
         public IActionResult Create()
         {
+            var DutyStatus = Enum.GetValues(typeof(DutyStatus))
+                .Cast<DutyStatus>()
+                .Select(e => new SelectListItem() { Text = localizer[e.ToString()], Value = ((int)e).ToString() })
+                .ToList()
+                .OrderBy(e => e.Text);
+            ViewData["Status"] = new SelectList(DutyStatus, "Value", "Text");
             ViewData["GroupId"] = new SelectList(_context.Groups, "Id", "Name");
             ViewData["TaskId"] = new SelectList(_context.StudentTasks, "Id", "Name");
             return View();
@@ -67,6 +78,12 @@ namespace MqareElsfrh.web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            var DutyStatus = Enum.GetValues(typeof(DutyStatus))
+                .Cast<DutyStatus>()
+                .Select(e => new SelectListItem() { Text = localizer[e.ToString()], Value = ((int)e).ToString() })
+                .ToList()
+                .OrderBy(e => e.Text);
+            ViewData["Status"] = new SelectList(DutyStatus, "Value", "Text", studentDuty.DutyStatus);
             ViewData["GroupId"] = new SelectList(_context.Groups, "Id", "Name", studentDuty.GroupId);
             ViewData["TaskId"] = new SelectList(_context.StudentTasks, "Id", "Name", studentDuty.TaskId);
             return View(studentDuty);
@@ -85,6 +102,12 @@ namespace MqareElsfrh.web.Controllers
             {
                 return NotFound();
             }
+            var DutyStatus = Enum.GetValues(typeof(DutyStatus))
+                .Cast<DutyStatus>()
+                .Select(e => new SelectListItem() { Text = localizer[e.ToString()], Value = ((int)e).ToString() })
+                .ToList()
+                .OrderBy(e => e.Text);
+            ViewData["Status"] = new SelectList(DutyStatus, "Value", "Text", studentDuty.DutyStatus);
             ViewData["GroupId"] = new SelectList(_context.Groups, "Id", "Name", studentDuty.GroupId);
             ViewData["TaskId"] = new SelectList(_context.StudentTasks, "Id", "Name", studentDuty.TaskId);
             return View(studentDuty);
@@ -122,6 +145,12 @@ namespace MqareElsfrh.web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            var DutyStatus = Enum.GetValues(typeof(DutyStatus))
+                .Cast<DutyStatus>()
+                .Select(e => new SelectListItem() { Text = localizer[e.ToString()], Value = ((int)e).ToString() })
+                .ToList()
+                .OrderBy(e => e.Text);
+            ViewData["Status"] = new SelectList(DutyStatus, "Value", "Text", studentDuty.DutyStatus);
             ViewData["GroupId"] = new SelectList(_context.Groups, "Id", "Name", studentDuty.GroupId);
             ViewData["TaskId"] = new SelectList(_context.StudentTasks, "Id", "Name", studentDuty.TaskId);
             return View(studentDuty);

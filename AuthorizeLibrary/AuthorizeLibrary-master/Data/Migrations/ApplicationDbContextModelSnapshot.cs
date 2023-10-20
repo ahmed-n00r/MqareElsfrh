@@ -57,7 +57,6 @@ namespace AuthorizeLibrary.Data.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -340,9 +339,7 @@ namespace AuthorizeLibrary.Data.Migrations
 
                     b.HasOne("DBModels.IdentityModel.AppUser", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("group");
 

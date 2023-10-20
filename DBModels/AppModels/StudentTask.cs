@@ -16,7 +16,7 @@ namespace DBModels.AppModels
         public string Name { get; set; }
 
         [Display(Name = "TaskStatus")]
-        public DBModels.AppConstants.TaskStatus TaskStatus { get; set; }
+        public DBModels.AppConstants.TaskStatusEnum TaskStatus { get; set; }
         [Display(Name = "TaskType")]
         public string TaskType { get; set; }
         [Display(Name = "EndDate")]
@@ -29,6 +29,9 @@ namespace DBModels.AppModels
         [ForeignKey("TaskId")]
         [Display(Name = "TaskId")]
         public StudentTask? parentTask { get; set; }
+
+        [NotMapped]
+        public string shortEndDate { get => EndDate.ToShortDateString(); }
 
         public List<StudentTask>? studentTasks { get; set; }
         public List<StudentDuty>? taskDuties { get; set; }

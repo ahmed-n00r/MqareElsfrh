@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBModels.AppConstants
 {
-    public enum TaskStatus
+    public enum TaskStatusEnum
     {
         Active = 1,
         Not_Active = 0

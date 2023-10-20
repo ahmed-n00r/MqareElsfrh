@@ -14,18 +14,18 @@ namespace AuthorizeLibrary.Constants
 
         public static ModelData HomeModel { get => new() { IsActive = ModelActivationStatus.Active, Name = "Home", MainAction = "Index", Icon = "ni ni-tv-2 text-primary", Index = 1, VeiwName = "Dashboard" }; }
 
-        public static ModelData StudentTaskModel { get => new() { IsActive = ModelActivationStatus.NotActive, Name = "StudentTasks", MainAction = "Index", Icon = "ni ni-paper-diploma text-info", Index = 2, VeiwName = "StudentTask" }; }
+        public static ModelData StudentTaskModel { get => new() { IsActive = ModelActivationStatus.NotActive, Name = "StudentTasks", MainAction = "Index", Icon = "ni ni-paper-diploma text-info", Index = 2, VeiwName = "StudentTasks" }; }
 
-        //public static ModelData StudentDutyModel { get => new() { IsActive = ModelActivationStatus.NotActive, Name = "Group", MainAction = "Index", Icon = "" };  }
+        //public static ModelData StudentDutyModel { get => new() { IsActive = ModelActivationStatus.NotActive, Name = "Group", MainAction = "Index", Icon = "" }; }
 
-        //public static ModelData StudentModel { get => new() { IsActive = ModelActivationStatus.NotActive, Name = "Group", MainAction = "Index", Icon = "" }; }
-
+        public static ModelData StudentModel { get => new() { IsActive = ModelActivationStatus.NotActive, Name = "StudentDuties", MainAction = "Index", Icon = "ni ni-ruler-pencil text-dark", Index = 3, VeiwName = "StudentDuties" }; }
+        //
         public static List<ModelData> ModelList = new List<ModelData> {
                 GroupModel,
                 HomeModel,
                 StudentTaskModel,
                 //StudentDutyModel,
-                //StudentModel
+                StudentModel
             }.OrderBy(k => k.Index).ToList();
 
         public static void setAllNotActive(string controllerName)
