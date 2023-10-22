@@ -33,6 +33,8 @@
   "Save": "Save",
   "CreateNew": "Create new {0}",
   "NameWith": "{0} name",
+  "Roles": "Roles",
+  "UserName": "User Name",
 
   "StudentTasks": "Student sask",
   "TaskStatus": "Task status",

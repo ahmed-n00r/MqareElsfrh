@@ -33,6 +33,8 @@
   "Group": "المجموعه",
   "Save": "حفظ",
   "CreateNew": "اشاء {0} جديد",
+  "Roles": "الصلاحياة",
+  "UserName": "اسم المستخدم",
 
   "StudentTasks": "مهام الطلاب",
   "TaskStatus": "حالة المهمه",
